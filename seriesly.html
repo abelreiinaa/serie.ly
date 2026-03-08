@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELISFLIX HD</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f171e;
+            color: #fff;
+        }
+
+        /* CONFIGURACIÓN DEL LAYOUT PRINCIPAL PELISFLIX */
+        .grid-contenedor {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 20px;
+            min-height: 100vh;
+        }
+
+        .cabecera {
+            grid-column: 1 / -1;
+            background-color: #1a242f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #1d68b8;
+        }
+
+        .cabecera h1 {
+            margin: 0;
+            color: #fff;
+        }
+
+        /* ESTILOS DE NAVEGACIÓN Y MENÚS DESPLEGABLES */
+        .barra-lateral {
+            background-color: #1a242f;
+            padding: 20px 0;
+        }
+
+        .barra-lateral h2 {
+            padding-left: 20px;
+            color: #8c9eae;
+        }
+
+        .barra-lateral ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-principal>li>a {
+            display: block;
+            padding: 12px 20px;
+            color: #d1d5db;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid #2a3645;
+        }
+
+        .menu-principal>li>a:hover {
+            background-color: #2a3645;
+            color: #fff;
+        }
+
+        .sub-menu {
+            display: none;
+            background-color: #131b23;
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 15px 10px 40px;
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9em;
+            border-bottom: 1px solid #1a242f;
+        }
+
+        .sub-menu li a:hover {
+            color: #fff;
+        }
+
+        .desplegable:hover .sub-menu {
+            display: block;
+        }
+
+        /* GRID DE ESTRENOS ONLINE */
+        .contenido {
+            padding: 20px;
+        }
+
+        .grid-peliculas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* TARJETA DE PELÍCULA Y EFECTO DE CAPA SUPERPUESTA */
+        .tarjeta-pelicula {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #000;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .tarjeta-pelicula img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .tarjeta-pelicula:hover img {
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
+
+        .detalles-pelicula {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(9, 14, 23, 0.85);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            font-size: 0.85em;
+            overflow-y: auto;
+        }
+
+        .tarjeta-pelicula:hover .detalles-pelicula,
+        .detalles-pelicula.mostrar {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .detalles-pelicula h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+            color: #fff;
+            text-align: center;
+        }
+
+        .detalles-pelicula p {
+            margin: 5px 0;
+            line-height: 1.4;
+            color: #d1d5db;
+        }
+
+        .detalles-pelicula p strong {
+            color: #fff;
+        }
+
+        .sinopsis-texto {
+            margin-top: 10px !important;
+            font-size: 0.9em;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .btn-ver {
+            display: block;
+            margin-top: auto;
+            padding: 10px;
+            background-color: #1d68b8;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-ver:hover {
+            background-color: #15508f;
+        }
+
+        .pie-pagina {
+            grid-column: 1 / -1;
+            background-color: #131b23;
+            color: #8c9eae;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #2a3645;
+        }
+
+        /* Responsividad para móviles */
+        @media (max-width: 768px) {
+            .grid-contenedor {
+                grid-template-columns: 1fr;
+            }
+            .barra-lateral {
+                display: none; /* Opcional: ocultar lateral en móvil */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-contenedor">
+        <header class="cabecera">
+            <h1>PELISFLIX HD</h1>
+        </header>
+
+        <div class="barra-lateral">
+            <h2>Menú</h2>
+            <ul class="menu-principal">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">SERIES</a></li>
+                <li><a href="#">PELÍCULAS</a></li>
+
+                <li class="desplegable">
+                    <a href="#">GÉNEROS ▼</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Acción</a></li>
+                        <li><a href="#">Comedia</a></li>
+                        <li><a href="#">Ciencia Ficción</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Estrenos</a></li>
+                    </ul>
+                </li>
+
+                <li class="desplegable">
+                    <a href="#">PRODUCTORAS ▼</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">NETFLIX</a></li>
+                        <li><a href="#">AMAZON</a></li>
+                        <li><a href="#">DISNEY</a></li>
+                        <li><a href="#">HBO</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <main class="contenido">
+            <h2>Estrenos Online</h2>
+            <div id="contenedor-peliculas" class="grid-peliculas"></div>
+        </main>
+
+        <footer class="pie-pagina">
+            <p>PELISFLIX HD - Tu destino para las mejores películas</p>
+        </footer>
+    </div>
+
+    <script>
+        // DATOS INTEGRADOS (Sustituye la necesidad del archivo .json externo)
+        const peliculas = [
+            {
+                "titulo": "SEND HELP (Enviad ayuda)",
+                "director": "sam raimi",
+                "genero": "comedia, Estrenos, terror, thriller",
+                "duracion": "1h 30m",
+                "actores": "Eden Sher, Justin Long, Molly Shannon",
+                "caratula": "https://asturscore.com/wp-content/uploads/2026/01/Caratula-BSO-Send-Help-Danny-Elfman.jpeg",
+                "trailer": "https://youtu.be/EHcgDabbuO4?si=IkJ-UDtHNRvKVKiU",
+                "sinopsis": "Un grupo de amigos se reúne para una fiesta de cumpleaños en una cabaña remota, pero las cosas toman un giro oscuro cuando descubren que no están solos."
+            },
+            {
+                "titulo": "GREENLAND 2",
+                "director": "RIC ROMAN WAUGH",
+                "genero": "aventura, ciencia ficción, estrenos, thriller",
+                "duracion": "1h 50m",
+                "actores": "gerard butler, morena baccarin, scott glenn",
+                "caratula": "https://asturscore.com/wp-content/uploads/2026/01/Caratula-BSO-Greenland-2-Migration-David-Buckley.jpeg",
+                "trailer": "https://youtu.be/ObUUuWCM-aQ?si=IvTJEif_c5ZuI-Ya",
+                "sinopsis": "En un mundo devastado por una catástrofe global, un grupo de sobrevivientes lucha por encontrar un refugio seguro mientras enfrentan peligros constantes."
+            },
+            {
+                "titulo": "THE LAST OF US",
+                "director": "Craig Mazin, Neil Druckmann",
+                "genero": "aventura, acción, ciencia ficción, estrenos, thriller",
+                "duracion": "1h 40m",
+                "actores": "Pedro Pascal, Bella Ramsey, Anna Torv",
+                "caratula": "https://m.media-amazon.com/images/M/MV5BYWI3ODJlMzktY2U5NC00ZjdlLWE1MGItNWQxZDk3NWNjN2RhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                "trailer": "https://youtu.be/yyGetSp7CIc?si=vhs_TFIxgzq3gYM2",
+                "sinopsis": "En un mundo postapocalíptico devastado por una pandemia, un hombre y una joven se embarcan en un peligroso viaje a través de un paisaje desolado."
+            },
+            {
+                "titulo": "AVATAR: THE WAY OF WATER",
+                "director": "James Cameron",
+                "genero": "aventura, acción, ciencia ficción, estrenos, thriller",
+                "duracion": "2h 30m",
+                "actores": "Sam Worthington, Zoe Saldana, Sigourney Weaver",
+                "caratula": "https://media.vandalsports.com/m/7-2025/202572283428_1.jpg",
+                "trailer": "https://youtu.be/q-nMVMghAF8?si=ZFVRREGYUZ9nWvH3",
+                "sinopsis": "En un futuro lejano, la humanidad ha colonizado un planeta llamado Pandora, habitado por una especie nativa llamada los Na'vi."
+            },
+            {
+                "titulo": "THE BATMAN",
+                "director": "Matt Reeves",
+                "genero": "acción, aventura, estrenos, thriller",
+                "duracion": "2h 55m",
+                "actores": "Robert Pattinson, Zoë Kravitz, Colin Farrell",
+                "caratula": "https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                "trailer": "https://youtu.be/mqqft2x_Aa4?si=Zl9n8sXqj3u9vH8e",
+                "sinopsis": "En su segundo año de lucha contra el crimen, Batman se enfrenta a un nuevo villano conocido como el Acertijo, quien deja pistas crípticas en las escenas de sus crímenes."
+            },
+            {
+                "titulo": "THE FLASH",
+                "director": "Andy Muschietti",
+                "genero": "acción, aventura, ciencia ficción, estrenos, thriller",
+                "duracion": "2h 20m",
+                "actores": "Ezra Miller, Michael Keaton, Ben Affleck",
+                "caratula": "https://asturscore.com/wp-content/uploads/2023/06/Caratula-BSO-The-Flash-Benjamin-Wallfisch.jpeg",
+                "trailer": "https://www.youtube.com/watch?v=1nEDzlqo3lc&pp=ygUJVEhFIEZMQVNT",
+                "sinopsis": "Barry Allen, también conocido como The Flash, viaja a través del tiempo para evitar el asesinato de su madre, lo que desencadena una serie de eventos que alteran la realidad."
+            },
+            {
+                "titulo": "JOHN WICK: CHAPTER 4",
+                "director": "Chad Stahelski",
+                "genero": "acción, aventura, estrenos, thriller",
+                "duracion": "2h 10m",
+                "actores": "Keanu Reeves, Laurence Fishburne, Ian McShane",
+                "caratula": "https://pantalla90.es/wp-content/uploads/2023/03/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+                "trailer": "#",
+                "sinopsis": "John Wick descubre un camino para derrotar a la Alta Mesa. Pero antes de poder ganar su libertad, debe enfrentarse a un nuevo enemigo con poderosas alianzas."
+            },
+            {
+                "titulo": "DUNE: PART TWO",
+                "director": "Denis Villeneuve",
+                "genero": "acción, aventura, ciencia ficción, estrenos, thriller",
+                "duracion": "2h 45m",
+                "actores": "Timothée Chalamet, Zendaya, Rebecca Ferguson",
+                "caratula": "https://es.web.img3.acsta.net/pictures/24/02/20/17/42/2385575.jpg",
+                "trailer": "https://www.youtube.com/watch?v=Qv7I3wDfFzI&pp=ygUOZHVuZSAyIHRyYWlsZXI%3D",
+                "sinopsis": "Continuación de la épica historia de Paul Atreides mientras lidera una rebelión contra las fuerzas opresoras en el planeta Arrakis."
+            },
+            {
+                "titulo": "BLACK PANTHER: WAKANDA FOREVER",
+                "director": "Ryan Coogler",
+                "genero": "acción, aventura, ciencia ficción, estrenos, thriller",
+                "duracion": "2h 30m",
+                "actores": "Letitia Wright, Lupita Nyong'o, Danai Gurira",
+                "caratula": "https://es.web.img2.acsta.net/pictures/22/10/03/15/27/0389048.jpg",
+                "trailer": "https://www.youtube.com/watch?v=JK-wAfAvJ0g&pp=ygUeYmxhY2sgcGFudGhlciB0cmFpbGVyIGVzcGHDsW9s",
+                "sinopsis": "Después de la muerte de T'Challa, los líderes de Wakanda luchan por proteger su nación de las amenazas externas mientras enfrentan su propio duelo."
+            },
+            {
+                "titulo": "THE MATRIX RESURRECTIONS",
+                "director": "Lana Wachowski",
+                "genero": "acción, aventura, ciencia ficción, estrenos, thriller",
+                "duracion": "2h 30m",
+                "actores": "Keanu Reeves, Carrie-Anne Moss, Yahya Abdul-Mateen II",
+                "caratula": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF7ZBvE4EI_Ag6A9Vo771jDGGcHUoODMMSkQ&s",
+                "trailer": "https://youtu.be/Pl_H2Lmjn6k?si=oGYHCau0Cnl3d0Qw",
+                "sinopsis": "Neo regresa a la Matrix para descubrir la verdad detrás de su existencia y enfrentarse a nuevas amenazas que ponen en peligro la realidad misma."
+            },
+            {
+                "titulo": "DEADPOOL",
+                "director": "Tim Miller",
+                "genero": "acción, aventura, ciencia ficción, estrenos, thriller",
+                "duracion": "1h 50m",
+                "actores": "Ryan Reynolds, Morena Baccarin, T.J. Miller",
+                "caratula": "https://pics.filmaffinity.com/deadpool-260617331-large.jpg",
+                "trailer": "https://youtu.be/9vN6DHB6bJc?si=Zl9n8sXqj3u9vH8e",
+                "sinopsis": "Un ex-agente de las fuerzas especiales se convierte en un mercenario con habilidades regenerativas después de un experimento fallido."
+            },
+            {
+                "titulo": "THUNDERBOLTS",
+                "director": "Jake Schreier",
+                "genero": "acción, aventura, ciencia ficción, estrenos, thriller",
+                "duracion": "2h 6m",
+                "actores": "Florence Pugh, Sebastian Stan, David Harbour, Wyatt Russell",
+                "caratula": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX7SlrHT7-l-hZpm09JnXfQmX0XToLr-_pOA&s",
+                "trailer": "https://www.youtube.com/watch?v=w7ovxH7MGes&pp=ygUddGh1bmRlcmJvbHRzIHRyYWlsZXIgZXNwYcOxb2w%3D",
+                "sinopsis": "Un grupo de villanos se une para llevar a cabo misiones peligrosas a cambio de reducciones en sus sentencias."
+            }
+        ];
+
+        // RENDERIZADO DE PELÍCULAS
+        const contenedor = document.getElementById('contenedor-peliculas');
+
+        peliculas.forEach(pelicula => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('tarjeta-pelicula');
+
+            tarjeta.innerHTML = `
+                <img src="${pelicula.caratula}" alt="Carátula de ${pelicula.titulo}" class="foto-clic">
+                <div class="detalles-pelicula">
+                    <h3>${pelicula.titulo}</h3>
+                    <p><strong>Director:</strong> ${pelicula.director}</p>
+                    <p><strong>Género:</strong> ${pelicula.genero}</p>
+                    <p><strong>Actores:</strong> ${pelicula.actores}</p>
+                    <p><strong>Duración:</strong> ${pelicula.duracion}</p>
+                    <p class="sinopsis-texto"><strong>Sinopsis:</strong> ${pelicula.sinopsis || 'Sin sinopsis disponible.'}</p>
+                    <a href="${pelicula.trailer}" target="_blank" class="btn-ver">▶ VER ONLINE</a>
+                </div>
+            `;
+
+            contenedor.appendChild(tarjeta);
+
+            // Funcionalidad de clic para mostrar detalles (útil en móviles)
+            const imagen = tarjeta.querySelector('.foto-clic');
+            const detalles = tarjeta.querySelector('.detalles-pelicula');
+
+            imagen.addEventListener('click', (e) => {
+                e.stopPropagation();
+                document.querySelectorAll('.detalles-pelicula.mostrar').forEach(el => {
+                    if (el !== detalles) el.classList.remove('mostrar');
+                });
+                detalles.classList.toggle('mostrar');
+            });
+        });
+
+        // Cerrar detalles si se hace clic fuera
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.detalles-pelicula.mostrar').forEach(el => {
+                el.classList.remove('mostrar');
+            });
+        });
+    </script>
+</body>
+
+</html>
