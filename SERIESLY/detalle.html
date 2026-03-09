@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Película</title>
+    <style>
+        body {
+            background-color: #141414;
+            color: #e5e5e5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: #E50914;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-volver:hover {
+            background-color: #b20710;
+        }
+
+        .contenedor-detalle {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            background-color: #181818;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .columna-izq {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+        }
+
+        .columna-izq img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .columna-der {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 0;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .datos-tecnicos {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .etiqueta {
+            color: #E50914;
+            font-weight: bold;
+        }
+
+        .sinopsis-texto {
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: #d1d1d1;
+            margin-top: 5px;
+        }
+
+        /* ESTILOS DE LA CAJA DE MENSAJE Y ENLACE */
+        .caja-mensaje {
+            background-color: #1a242f; /* Azul muy oscuro */
+            border-left: 4px solid #E50914; /* Borde rojo estilo Netflix */
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-size: 1.2em;
+            text-align: center;
+            color: #d1d5db;
+        }
+
+        .enlace-ver {
+            color: #E50914;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .enlace-ver:hover {
+            text-decoration: underline;
+            color: #ff1a25;
+        }
+
+        .trailer-contenedor {
+            margin-top: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-volver">← Volver al catálogo</a>
+
+    <div id="contenido" class="contenedor-detalle">
+        </div>
+
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const tituloBuscado = parametros.get('titulo');
+
+        fetch('/api/peliculas')
+            .then(respuesta => respuesta.json())
+            .then(peliculas => {
+                const peli = peliculas.find(p => p.titulo === tituloBuscado);
+                const contenedor = document.getElementById('contenido');
+
+                if (peli) {
+                    let urlEmbed = "";
+                    let trailerHTML = "<p>Tráiler no disponible</p>"; 
+                    
+                    if (peli.trailer) {
+                        urlEmbed = peli.trailer;
+                        if (urlEmbed.includes('watch?v=')) {
+                            urlEmbed = urlEmbed.replace('watch?v=', 'embed/');
+                        } else if (urlEmbed.includes('youtu.be/')) {
+                            urlEmbed = urlEmbed.replace('youtu.be/', 'youtube.com/embed/');
+                        }
+                        urlEmbed = urlEmbed.split('&')[0].split('?si=')[0];
+                        trailerHTML = `<iframe src="${urlEmbed}" allowfullscreen></iframe>`;
+                    }
+
+                    let listaActores = "<li>No hay reparto disponible</li>";
+                    if (peli.actores) {
+                        listaActores = peli.actores.split(',').map(actor => `<li>${actor.trim()}</li>`).join('');
+                    }
+
+                    const directorPeli = peli.director ? peli.director.toUpperCase() : "Desconocido";
+                    const generoPeli = peli.genero ? peli.genero.toUpperCase() : "No especificado";
+                    const duracionPeli = peli.duracion ? peli.duracion : "No especificada";
+                    const sinopsisPeli = peli.sinopsis ? peli.sinopsis : "Sinopsis no disponible.";
+                    
+                    // Comprobamos si la película tiene un enlace de video configurado en el JSON
+                    const enlaceVideo = peli.url_video ? peli.url_video : null;
+
+                    contenedor.innerHTML = `
+                        <div class="columna-izq">
+                            <img src="${peli.caratula}" alt="Carátula de ${peli.titulo}">
+                        </div>
+                        <div class="columna-der">
+                            <h1>${peli.titulo}</h1>
+                            
+                            <div class="datos-tecnicos">
+                                <p><span class="etiqueta">Director:</span> ${directorPeli}</p>
+                                <p><span class="etiqueta">Género:</span> ${generoPeli}</p>
+                                <p><span class="etiqueta">Duración:</span> ${duracionPeli}</p>
+                            </div>
+                            
+                            <div class="sinopsis-texto">
+                                <span class="etiqueta">Sinopsis:</span> <br> ${sinopsisPeli}
+                            </div>
+                            
+                            <div>
+                                <span class="etiqueta">Actores:</span>
+                                <ul>${listaActores}</ul>
+                            </div>
+
+                            <div id="caja-estreno" class="caja-mensaje">
+                                ⏳ El enlace de la película estará disponible en <strong id="contador-estreno" style="color: white;">5</strong> segundos...
+                            </div>
+
+                            <div class="trailer-contenedor">
+                                <span class="etiqueta">Tráiler:</span> <br><br>
+                                ${trailerHTML}
+                            </div>
+                        </div>
+                    `;
+
+                    // LÓGICA DE LA CUENTA ATRÁS PARA EL MENSAJE
+                    let tiempoRestante = 5;
+                    const cajaEstreno = document.getElementById('caja-estreno');
+                    const contadorSpan = document.getElementById('contador-estreno');
+
+                    const temporizador = setInterval(() => {
+                        tiempoRestante--;
+                        
+                        if (tiempoRestante > 0) {
+                            contadorSpan.textContent = tiempoRestante;
+                        } else {
+                            clearInterval(temporizador);
+                            
+                            // Cuando llega a 0, cambiamos todo el contenido de la caja
+                            if (enlaceVideo) {
+                                cajaEstreno.innerHTML = `
+                                    ✅ ¡Ya está disponible! <br>
+                                    <a href="${enlaceVideo}" target="_blank" class="enlace-ver">▶ Reproducir película ahora</a>
+                                `;
+                            } else {
+                                // Por si te olvidas de poner el enlace en alguna peli del JSON
+                                cajaEstreno.innerHTML = `❌ El enlace de reproducción aún no ha sido añadido a la base de datos.`;
+                            }
+                        }
+                    }, 1000);
+
+                } else {
+                    contenedor.innerHTML = '<h2>Película no encontrada.</h2>';
+                }
+            })
+            .catch(error => {
+                console.error('Error detallado:', error);
+                document.getElementById('contenido').innerHTML = '<p>Error al procesar los datos de la película. Asegúrate de usar Live Server.</p>';
+            });
+    </script>
+</body>
+</html>
