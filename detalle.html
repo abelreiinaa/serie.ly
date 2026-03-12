@@ -218,8 +218,8 @@
         const parametros = new URLSearchParams(window.location.search);
         const tituloBuscado = parametros.get('titulo');
 
-        // ✅ Corregido: Sin la barra diagonal al principio
-        fetch('peliculas.json')
+        // ✅ AÑADIDO: Sistema anti-caché para forzar la carga del JSON más reciente
+        fetch('peliculas.json?v=' + new Date().getTime())
             .then(respuesta => respuesta.json())
             .then(peliculas => {
                 const peli = peliculas.find(p => p.titulo === tituloBuscado);

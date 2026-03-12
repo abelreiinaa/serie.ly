@@ -264,11 +264,10 @@
     </div>
 
     <script>
-        
         let peliculasDB = [];
 
-        // ✅ Corregido: Sin la barra diagonal al principio
-        fetch('peliculas.json')
+        // ✅ AÑADIDO: ?v=' + new Date().getTime() para forzar la carga del nuevo JSON y evitar la memoria caché
+        fetch('peliculas.json?v=' + new Date().getTime())
             .then(res => res.json())
             .then(data => {
                 peliculasDB = data;
