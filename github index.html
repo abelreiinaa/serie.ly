@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELISFLIX HD - Pro Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --fondo-oscuro: #0c1117;
+            --fondo-sidebar: #0f171e;
+            --azul-acento: #1d68b8;
+            --texto-gris: #8c9eae;
+            --rojo-netflix: #E50914;
+            --ancho-sidebar: 320px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--fondo-oscuro);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- CABECERA --- */
+        .cabecera {
+            background-color: var(--fondo-sidebar);
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--azul-acento);
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8em;
+            cursor: pointer;
+        }
+
+        /* --- LAYOUT --- */
+        .contenedor-principal {
+            display: flex;
+            flex: 1;
+        }
+
+        /* --- BARRA LATERAL --- */
+        .barra-lateral {
+            width: var(--ancho-sidebar);
+            background-color: var(--fondo-sidebar);
+            height: calc(100vh - 70px);
+            position: sticky;
+            top: 70px;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            border-right: 1px solid #1a242f;
+            z-index: 1000;
+        }
+
+        .barra-lateral.escondida {
+            margin-left: calc(var(--ancho-sidebar) * -1);
+        }
+
+        .item-principal {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .item-principal i {
+            margin-right: 15px;
+            color: var(--azul-acento);
+            width: 25px;
+            text-align: center;
+        }
+
+        .item-principal:hover { background-color: #1a242f; }
+
+        .seccion-titulo {
+            padding: 20px 25px 10px;
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .seccion-titulo i.fa-caret-right {
+            color: var(--azul-acento);
+            transition: transform 0.3s;
+        }
+
+        .seccion-titulo.abierto i.fa-caret-right { transform: rotate(90deg); }
+
+        .grid-menu {
+            display: none;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 10px 20px;
+            gap: 8px;
+        }
+
+        .seccion-titulo.abierto + .grid-menu { display: grid; }
+
+        .btn-filtro {
+            background: rgba(255,255,255,0.03);
+            border: none;
+            color: var(--texto-gris);
+            text-align: left;
+            padding: 10px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-filtro:hover, .btn-filtro:focus { background: var(--azul-acento); color: white; outline: none; }
+
+        /* ESTILO LOGOS PRODUCTORAS */
+        .logo-item { height: 60px; }
+        .logo-img { height: 25px; width: auto; max-width: 90%; object-fit: contain; pointer-events: none; }
+
+        /* --- CONTENIDO --- */
+        .contenido {
+            flex: 1;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .grid-peliculas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta {
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 2/3;
+            background: #1a242f;
+            transition: transform 0.3s;
+            display: block;
+            position: relative; /* Añadido para posicionar la etiqueta */
+        }
+
+        .tarjeta:hover, .tarjeta:focus {
+            transform: scale(1.08);
+            outline: 4px solid white;
+            z-index: 10;
+        }
+
+        .tarjeta img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- ETIQUETA DE SERIE --- */
+        .badge-serie {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--rojo-netflix);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8em;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+
+        /* --- SMART TV --- */
+        @media (min-width: 1200px) {
+            .grid-peliculas { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+            .tarjeta:focus, .btn-filtro:focus, .item-principal:focus {
+                background-color: var(--rojo-netflix) !important;
+                transform: scale(1.1);
+            }
+        }
+
+        /* --- MÓVIL --- */
+        @media (max-width: 768px) {
+            .barra-lateral { position: fixed; left: -320px; top: 0; height: 100vh; }
+            .barra-lateral.show { left: 0; margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecera">
+        <button  class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        <h1 style="font-size: 1.4em; letter-spacing: 2px;">PELISFLIX <span style="color: var(--rojo-netflix)">HD</span></h1>
+        <div style="width: 40px;"></div>
+    </header>
+
+    <div class="contenedor-principal">
+        <nav class="barra-lateral" id="sidebar">
+            <a href="index.html" class="item-principal"><i class="fas fa-home"></i> Inicio</a>
+            <div class="item-principal" onclick="filtrarPorTipo('pelicula')"><i class="fas fa-film"></i> Películas</div>
+            <div class="item-principal" onclick="filtrarPorTipo('serie')"><i class="fas fa-tv"></i> Series</div>
+
+            <div class="seccion-titulo abierto" onclick="this.classList.toggle('abierto')">
+                Géneros <i class="fas fa-caret-right"></i>
+            </div>
+            <div class="grid-menu">
+                <button class="btn-filtro" onclick="filtrar('Acción')">Acción</button>
+                <button class="btn-filtro" onclick="filtrar('Aventura')">Aventura</button>
+                <button class="btn-filtro" onclick="filtrar('Comedia')">Comedia</button>
+                <button class="btn-filtro" onclick="filtrar('Terror')">Terror</button>
+                <button class="btn-filtro" onclick="filtrar('Drama')">Drama</button>
+                <button class="btn-filtro" onclick="filtrar('Ciencia ficción')">C. Ficción</button>
+            </div>
+
+            <div class="seccion-titulo abierto" onclick="this.classList.toggle('abierto')">
+                Productoras <i class="fas fa-caret-right"></i>
+            </div>
+            <div class="grid-menu">
+                <button class="btn-filtro logo-item" onclick="filtrar('Netflix')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Netflix_Logomark.png" alt="Netflix" class="logo-img">
+                </button>
+                <button class="btn-filtro logo-item" onclick="filtrar('Amazon')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Amazon" class="logo-img">
+                </button>
+                <button class="btn-filtro logo-item" onclick="filtrar('Disney')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/640px-Disney%2B_logo.svg.png" alt="Disney" class="logo-img">
+                </button>
+                <button class="btn-filtro logo-item" onclick="filtrar('HBO')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_Max_Logo.svg" alt="HBO" class="logo-img">
+                </button>
+                <button class="btn-filtro logo-item" onclick="filtrar('Marvel')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg" alt="Marvel" class="logo-img">
+                </button>
+                <button class="btn-filtro logo-item" onclick="filtrar('DC')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/DC_Comics_logo.svg" alt="DC" class="logo-img" style="filter: invert(1);">
+                </button>
+                <button class="btn-filtro logo-item" onclick="filtrar('warner bros')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Warner_Bros._%28Dimensional_Ver.%29_Logo_1.svg/250px-Warner_Bros._%28Dimensional_Ver.%29_Logo_1.svg.png" alt="warner bros" class="logo-img" style="filter: invert(1);">
+                </button>
+                <button class="btn-filtro logo-item" onclick="filtrar('20th century studios')">
+                    <img src="https://static.wikia.nocookie.net/logopedia/images/f/f5/20th_Century_Fox_-_2013.jpg/revision/latest?cb=20200408034047" alt="20th century studios" class="logo-img" style="filter: invert(1);">
+                </button>
+            </div>
+        </nav>
+
+        <main class="contenido">
+            <h2 id="titulo-seccion" style="margin-bottom: 30px; border-left: 5px solid var(--azul-acento); padding-left: 15px;">Explorar Catálogo</h2>
+            <div id="contenedor-peliculas" class="grid-peliculas"></div>
+        </main>
+    </div>
+
+    <script>
+        
+        let peliculasDB = [];
+
+        // ✅ Corregido: Sin la barra diagonal al principio
+        fetch('peliculas.json')
+            .then(res => res.json())
+            .then(data => {
+                peliculasDB = data;
+                render(data);
+            })
+            .catch(error => console.error("Error cargando el JSON:", error));
+
+        function render(lista) {
+            const box = document.getElementById('contenedor-peliculas');
+            box.innerHTML = '';
+            lista.forEach(p => {
+                const etiqueta = (p.tipo && p.tipo.toLowerCase() === 'serie') 
+                    ? '<div class="badge-serie">Serie</div>' 
+                    : '';
+
+                box.innerHTML += `
+                    <a href="detalle.html?titulo=${encodeURIComponent(p.titulo)}" class="tarjeta" tabindex="0">
+                        ${etiqueta}
+                        <img src="${p.caratula}" alt="${p.titulo}" loading="lazy">
+                    </a>`;
+            });
+        }
+
+        function filtrar(valor) {
+            document.getElementById('titulo-seccion').innerText = "Viendo: " + valor;
+            const filtradas = peliculasDB.filter(p => 
+                p.genero.toLowerCase().includes(valor.toLowerCase()) || 
+                (p.productora && p.productora.toLowerCase().includes(valor.toLowerCase()))
+            );
+            render(filtradas);
+            if(window.innerWidth < 768) toggleSidebar();
+        }
+
+        function filtrarPorTipo(tipo) {
+            document.getElementById('titulo-seccion').innerText = "Catálogo de " + tipo + "s";
+            const filtradas = peliculasDB.filter(p => 
+                p.tipo && p.tipo.toLowerCase() === tipo.toLowerCase()
+            );
+            render(filtradas);
+            if(window.innerWidth < 768) toggleSidebar();
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth <= 768) {
+                sidebar.classList.toggle('show');
+            } else {
+                sidebar.classList.toggle('escondida');
+            }
+        }
+    </script>
+</body>
+</html>

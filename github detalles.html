@@ -88,8 +88,8 @@
 
         /* ESTILOS DE LA CAJA DE MENSAJE Y ENLACE */
         .caja-mensaje {
-            background-color: #1a242f; /* Azul muy oscuro */
-            border-left: 4px solid #E50914; /* Borde rojo estilo Netflix */
+            background-color: #1a242f; 
+            border-left: 4px solid #E50914; 
             padding: 20px;
             margin: 30px 0;
             border-radius: 4px;
@@ -122,6 +122,89 @@
             border: none;
             border-radius: 8px;
         }
+
+        /* --- NUEVOS ESTILOS PARA SERIES Y CAPÍTULOS --- */
+        .seccion-series {
+            width: 100%;
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 30px;
+        }
+
+        .selector-temporada {
+            background-color: #1a242f;
+            color: white;
+            border: 1px solid #E50914;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        .grid-capitulos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .capitulo-card {
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .capitulo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+            z-index: 10;
+        }
+
+        .capitulo-card video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+            background-color: #000;
+        }
+
+        .info-capitulo {
+            padding: 15px;
+        }
+
+        .info-capitulo strong {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .overlay-descripcion {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 50px); /* Deja libre la zona del título */
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9em;
+            color: #d1d5db;
+            pointer-events: none;
+            text-align: center;
+        }
+
+        .capitulo-card:hover .overlay-descripcion {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -129,13 +212,14 @@
     <a href="index.html" class="btn-volver">← Volver al catálogo</a>
 
     <div id="contenido" class="contenedor-detalle">
-        </div>
+    </div>
 
     <script>
         const parametros = new URLSearchParams(window.location.search);
         const tituloBuscado = parametros.get('titulo');
 
-        fetch('/api/peliculas')
+        // ✅ Corregido: Sin la barra diagonal al principio
+        fetch('peliculas.json')
             .then(respuesta => respuesta.json())
             .then(peliculas => {
                 const peli = peliculas.find(p => p.titulo === tituloBuscado);
@@ -166,8 +250,7 @@
                     const duracionPeli = peli.duracion ? peli.duracion : "No especificada";
                     const sinopsisPeli = peli.sinopsis ? peli.sinopsis : "Sinopsis no disponible.";
                     
-                    // Comprobamos si la película tiene un enlace de video configurado en el JSON
-                    const enlaceVideo = peli.url_video ? peli.url_video : null;
+                    const enlaceVideo = peli.url_video;
 
                     contenedor.innerHTML = `
                         <div class="columna-izq">
@@ -192,7 +275,7 @@
                             </div>
 
                             <div id="caja-estreno" class="caja-mensaje">
-                                ⏳ El enlace de la película estará disponible en <strong id="contador-estreno" style="color: white;">5</strong> segundos...
+                                ⏳ El enlace principal estará disponible en <strong id="contador-estreno" style="color: white;">5</strong> segundos...
                             </div>
 
                             <div class="trailer-contenedor">
@@ -202,7 +285,6 @@
                         </div>
                     `;
 
-                    // LÓGICA DE LA CUENTA ATRÁS PARA EL MENSAJE
                     let tiempoRestante = 5;
                     const cajaEstreno = document.getElementById('caja-estreno');
                     const contadorSpan = document.getElementById('contador-estreno');
@@ -215,27 +297,84 @@
                         } else {
                             clearInterval(temporizador);
                             
-                            // Cuando llega a 0, cambiamos todo el contenido de la caja
                             if (enlaceVideo) {
                                 cajaEstreno.innerHTML = `
                                     ✅ ¡Ya está disponible! <br>
-                                    <a href="${enlaceVideo}" target="_blank" class="enlace-ver">▶ Reproducir película ahora</a>
+                                    <a href="${enlaceVideo}" target="_blank" class="enlace-ver">▶ Reproducir ahora</a>
                                 `;
                             } else {
-                                // Por si te olvidas de poner el enlace en alguna peli del JSON
-                                cajaEstreno.innerHTML = `❌ El enlace de reproducción aún no ha sido añadido a la base de datos.`;
+                                cajaEstreno.innerHTML = `❌ El enlace de reproducción principal aún no ha sido añadido.`;
                             }
                         }
                     }, 1000);
 
+                    if (peli.tipo === 'serie' && peli.temporadas) {
+                        const seccionSeries = document.createElement('div');
+                        seccionSeries.className = 'seccion-series';
+                        
+                        let opcionesTemporada = peli.temporadas.map(t => `<option value="${t.numero}">Temporada ${t.numero}</option>`).join('');
+                        
+                        seccionSeries.innerHTML = `
+                            <h2>Episodios</h2>
+                            <select id="selector-temporada" class="selector-temporada">
+                                ${opcionesTemporada}
+                            </select>
+                            <div id="lista-capitulos" class="grid-capitulos"></div>
+                        `;
+                        
+                        contenedor.appendChild(seccionSeries);
+
+                        const selector = document.getElementById('selector-temporada');
+                        const lista = document.getElementById('lista-capitulos');
+
+                        const cargarCapitulos = (num) => {
+                            const temp = peli.temporadas.find(t => t.numero == num);
+                            if (temp && temp.capitulos) {
+                                lista.innerHTML = temp.capitulos.map(cap => {
+                                    const textoHover = cap.descripcion || cap.sinopsis || "Sin descripción disponible.";
+                                    const imgMiniatura = cap.miniatura || cap.caratula || "";
+
+                                    return `
+                                    <div class="capitulo-card" onclick="reproducirCapitulo(this)">
+                                        <video src="${cap.url_video || cap.video_url}" muted loop poster="${imgMiniatura}" 
+                                               onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime=0;">
+                                        </video>
+                                        <div class="overlay-descripcion">${textoHover}</div>
+                                        <div class="info-capitulo">
+                                            <strong>${cap.numero}. ${cap.titulo}</strong>
+                                        </div>
+                                    </div>
+                                    `;
+                                }).join('');
+                            }
+                        };
+
+                        selector.addEventListener('change', (e) => cargarCapitulos(e.target.value));
+                        cargarCapitulos(peli.temporadas[0].numero); 
+                    }
+
                 } else {
-                    contenedor.innerHTML = '<h2>Película no encontrada.</h2>';
+                    contenedor.innerHTML = '<h2>Película o Serie no encontrada.</h2>';
                 }
             })
             .catch(error => {
                 console.error('Error detallado:', error);
-                document.getElementById('contenido').innerHTML = '<p>Error al procesar los datos de la película. Asegúrate de usar Live Server.</p>';
+                document.getElementById('contenido').innerHTML = '<p>Error al procesar los datos. Comprueba la consola.</p>';
             });
+
+        function reproducirCapitulo(cardElement) {
+            const video = cardElement.querySelector('video');
+            if (video) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen(); 
+                }
+                video.muted = false; 
+                video.currentTime = 0; 
+                video.play();
+            }
+        }
     </script>
 </body>
 </html>

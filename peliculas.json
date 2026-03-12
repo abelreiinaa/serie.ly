@@ -8,7 +8,9 @@
         "caratula": "https://pics.filmaffinity.com/Send_Help_Enviad_ayuda-305293362-large.jpg",
         "trailer": "https://youtu.be/EHcgDabbuO4?si=IkJ-UDtHNRvKVKiU",
         "sinopsis": "Un grupo de amigos se reúne para una escapada de fin de semana en una isla remota para celebrar un cumpleaños. Lo que empieza como una divertida y relajante reunión pronto toma un giro oscuro y aterrador cuando descubren que están incomunicados y que una presencia amenazadora los acecha. Atrapados y sin forma de pedir ayuda al continente, deberán luchar por su supervivencia mientras oscuros secretos del grupo empiezan a salir a la luz.",
-        "url_video": "https://luluvid.com/d/uspi71iizz9p"
+        "url_video": "https://luluvid.com/d/uspi71iizz9p",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
     },
     {
         "titulo": "GREENLAND 2",
@@ -19,18 +21,146 @@
         "caratula": "https://asturscore.com/wp-content/uploads/2026/01/Caratula-BSO-Greenland-2-Migration-David-Buckley.jpeg",
         "trailer": "https://youtu.be/ObUUuWCM-aQ?si=IvTJEif_c5ZuI-Ya",
         "sinopsis": "Secuela del impactante thriller de supervivencia. Tras la devastadora lluvia de meteoritos que destruyó gran parte del planeta, la familia Garrity debe abandonar la relativa seguridad de su búnker subterráneo en Groenlandia. Ahora, en un mundo irreconocible, plagado de peligros climáticos extremos y escasez de recursos, emprenderán un arduo y peligroso viaje a través de un continente helado y hostil en busca de un nuevo hogar y un atisbo de esperanza para la raza humana.",
-        "url_video": "https://luluvid.com/d/u44iadgjguko"
+        "url_video": "https://luluvid.com/d/u44iadgjguko",
+        "tipo": "pelicula",
+        "productora": "warner bros"
     },
     {
         "titulo": "THE LAST OF US",
         "director": "Craig Mazin, Neil Druckmann",
         "genero": "aventura,acción,ciencia ficción,estrenos,thriller",
-        "duracion": "1h 40m",
+        "duracion": "2 Temporadas",
         "actores": "Pedro Pascal, Bella Ramsey, Anna Torv",
         "caratula": "https://m.media-amazon.com/images/M/MV5BYWI3ODJlMzktY2U5NC00ZjdlLWE1MGItNWQxZDk3NWNjN2RhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         "trailer": "https://youtu.be/yyGetSp7CIc?si=vhs_TFIxgzq3gYM2",
-        "sinopsis": "Basada en el aclamado videojuego, la historia se sitúa veinte años después de que una letal infección fúngica masiva destruyera la civilización moderna y convirtiera a los humanos en monstruos. Joel, un contrabandista endurecido por la tragedia, es contratado para sacar a Ellie, una niña de 14 años que podría ser la clave para desarrollar una cura, de una opresiva zona de cuarentena. Lo que comienza como un pequeño trabajo se convierte en un viaje brutal y desgarrador a través de unos Estados Unidos en ruinas.",
-        "url_video": "https://luluvid.com/wgpaz64vaawg"
+        "sinopsis": "Basada en el aclamado videojuego, la historia se sitúa veinte años después de que una letal infección fúngica masiva destruyera la civilización moderna.",
+        "url_video": "https://luluvid.com/wgpaz64vaawg",
+        "tipo": "serie",
+        "productora": "hbo",
+        "temporadas": [
+            {
+                "numero": 1,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Cuando te pierdas en la oscuridad",
+                        "sinopsis": "Joel y Tess son contratados para escoltar a la joven Ellie.",
+                        "caratula": "t1_c1.jpg",
+                        "url_video": "video1.mp4"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Infectados",
+                        "sinopsis": "El grupo atraviesa un hotel abandonado lleno de chasqueadores.",
+                        "caratula": "t1_c2.jpg",
+                        "url_video": "video2.mp4"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Mucho, mucho tiempo",
+                        "sinopsis": "La historia de supervivencia y amor de Bill y Frank.",
+                        "caratula": "t1_c3.jpg",
+                        "url_video": "video3.mp4"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Por favor, no me sueltes la mano",
+                        "sinopsis": "Emboscada en Kansas City por un grupo de cazadores.",
+                        "caratula": "t1_c4.jpg",
+                        "url_video": "video4.mp4"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "Resistir y sobrevivir",
+                        "sinopsis": "Joel y Ellie intentan escapar con la ayuda de Henry y Sam.",
+                        "caratula": "t1_c5.jpg",
+                        "url_video": "video5.mp4"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "Familia",
+                        "sinopsis": "Joel se reencuentra con su hermano Tommy en Wyoming.",
+                        "caratula": "t1_c6.jpg",
+                        "url_video": "video6.mp4"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Lo que dejamos atrás",
+                        "sinopsis": "Flashback de Ellie y su amiga Riley en un centro comercial.",
+                        "caratula": "t1_c7.jpg",
+                        "url_video": "video7.mp4"
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "Cuando más necesitamos",
+                        "sinopsis": "Ellie lucha por proteger a Joel de un grupo de caníbales.",
+                        "caratula": "t1_c8.jpg",
+                        "url_video": "video8.mp4"
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "Busca la luz",
+                        "sinopsis": "Final de temporada en el hospital de los Luciérnagas.",
+                        "caratula": "t1_c9.jpg",
+                        "url_video": "video9.mp4"
+                    }
+                ]
+            },
+            {
+                "numero": 2,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Viejas heridas",
+                        "sinopsis": "Joel y Ellie intentan vivir una vida normal en Jackson.",
+                        "caratula": "t2_c1.jpg",
+                        "url_video": "v10.mp4"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "El rastro",
+                        "sinopsis": "Un grupo de desconocidos llega a las cercanías del pueblo.",
+                        "caratula": "t2_c2.jpg",
+                        "url_video": "v11.mp4"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Justicia",
+                        "sinopsis": "Las consecuencias de actos pasados alcanzan a los protagonistas.",
+                        "caratula": "t2_c3.jpg",
+                        "url_video": "v12.mp4"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Seattle: Día 1",
+                        "sinopsis": "Ellie emprende un viaje de venganza hacia una nueva ciudad.",
+                        "caratula": "t2_c4.jpg",
+                        "url_video": "v13.mp4"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "Infiltración",
+                        "sinopsis": "Enfrentamiento contra la facción conocida como el WLF.",
+                        "caratula": "t2_c5.jpg",
+                        "url_video": "v14.mp4"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "El acuario",
+                        "sinopsis": "Ellie descubre pistas sobre el paradero de sus objetivos.",
+                        "caratula": "t2_c6.jpg",
+                        "url_video": "v15.mp4"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Confrontación",
+                        "sinopsis": "El clímax de la temporada entre dos caminos de odio.",
+                        "caratula": "t2_c7.jpg",
+                        "url_video": "v16.mp4"
+                    }
+                ]
+            }
+        ]
     },
     {
         "titulo": "AVATAR: THE WAY OF WATER",
@@ -41,7 +171,9 @@
         "caratula": "https://static.wixstatic.com/media/e9143f_1969f04014534f0683b58b19e11d27dd~mv2.jpg/v1/fill/w_500,h_729,al_c,q_85,enc_avif,quality_auto/e9143f_1969f04014534f0683b58b19e11d27dd~mv2.jpg",
         "trailer": "https://youtu.be/q-nMVMghAF8?si=ZFVRREGYUZ9nWvH3",
         "sinopsis": "Más de una década después de los eventos de la primera película, Jake Sully y Neytiri han formado una familia en el exuberante planeta Pandora. Sin embargo, cuando una antigua y despiadada amenaza humana regresa para terminar la colonización que empezaron, Jake debe abandonar su hogar en el bosque. Buscando refugio en las regiones costeras, la familia Sully deberá aprender las costumbres de los clanes del agua y librar una nueva y épica batalla para proteger su mundo y a los suyos.",
-        "url_video": "https://luluvid.com/dnldl06lcznu"
+        "url_video": "https://luluvid.com/dnldl06lcznu",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
     },
     {
         "titulo": "THE BATMAN",
@@ -52,7 +184,9 @@
         "caratula": "https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         "trailer": "https://youtu.be/mqqft2x_Aa4?si=Zl9n8sXqj3u9vH8e",
         "sinopsis": "En su segundo año patrullando las oscuras y lluviosas calles de Gotham City como la encarnación de la venganza, Bruce Wayne se topa con un asesino en serie conocido como el Acertijo. Este sádico criminal comienza a asesinar a figuras políticas de la élite, dejando un rastro de pistas crípticas y macabras. Con la ayuda de aliados como Jim Gordon y Catwoman, Batman deberá sumergirse en los bajos fondos de la ciudad para desenmascarar al culpable y destapar la profunda red de corrupción.",
-        "url_video": "https://luluvid.com/8di36ujdbvr6"
+        "url_video": "https://luluvid.com/8di36ujdbvr6",
+        "tipo": "pelicula",
+        "productora": "DC"
     },
     {
         "titulo": "THE FLASH",
@@ -63,7 +197,9 @@
         "caratula": "https://asturscore.com/wp-content/uploads/2023/06/Caratula-BSO-The-Flash-Benjamin-Wallfisch.jpeg",
         "trailer": "https://www.youtube.com/watch?v=1nEDzlqo3lc&pp=ygUJVEhFIEZMQVNT",
         "sinopsis": "Impulsado por el deseo de salvar a su familia, Barry Allen usa sus poderes de supervelocidad para viajar en el tiempo y evitar el trágico asesinato de su madre. Sin embargo, su intento de cambiar el pasado altera drásticamente el futuro, dejándolo atrapado en una realidad alternativa donde el letal General Zod ha regresado y no hay metahumanos para defender la Tierra. Barry deberá recurrir a un Batman muy diferente y rescatar a una kryptoniana prisionera si quiere restaurar su línea temporal.",
-        "url_video": "https://powcloub.org/mswje8fyvu3b"
+        "url_video": "https://powcloub.org/mswje8fyvu3b",
+        "tipo": "pelicula",
+        "productora": "DC"
     },
     {
         "titulo": "JOHN WICK: CHAPTER 4",
@@ -74,7 +210,9 @@
         "caratula": "https://pantalla90.es/wp-content/uploads/2023/03/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
         "trailer": "https://www.youtube.com/watch?v=yjRHZEUamCc",
         "sinopsis": "Con el precio por su cabeza cada vez más alto, el implacable y legendario asesino John Wick lleva su sangrienta lucha a nivel global para derrotar a la todopoderosa Alta Mesa de una vez por todas. Para ganar su libertad definitiva, Wick deberá enfrentarse a un nuevo y sofisticado enemigo, el sádico Marqués de Gramont, que cuenta con letales alianzas en todo el mundo. Desde Nueva York hasta París, pasando por Osaka y Berlín, John desatará su furia en la batalla final.",
-        "url_video": "https://filemoon.sx/d/ltfz85uyy3b3"
+        "url_video": "https://filemoon.sx/d/ltfz85uyy3b3",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
     },
     {
         "titulo": "DUNE: PART TWO",
@@ -85,7 +223,9 @@
         "caratula": "https://es.web.img3.acsta.net/pictures/24/02/20/17/42/2385575.jpg",
         "trailer": "https://www.youtube.com/watch?v=Qv7I3wDfFzI&pp=ygUOZHVuZSAyIHRyYWlsZXI%3D",
         "sinopsis": "Tras la brutal traición que destruyó a su familia, Paul Atreides se une a Chani y a la tribu de los Fremen en los inmensos y áridos desiertos de Arrakis. Mientras prepara una guerra sagrada de venganza contra los conspiradores que asesinaron a su padre, Paul deberá ganarse el respeto de los líderes Fremen y aceptar su papel como el mesías profetizado. Dividido entre el amor de su vida y el destino del universo, intentará evitar una guerra terrible que solo él puede prever.",
-        "url_video": "https://filemoon.sx/d/ltfz85uyy3b3/Dune_Part_Two_2023_1080p.mkv"
+        "url_video": "https://filemoon.sx/d/ltfz85uyy3b3/Dune_Part_Two_2023_1080p.mkv",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
     },
     {
         "titulo": "BLACK PANTHER: WAKANDA FOREVER",
@@ -96,7 +236,9 @@
         "caratula": "https://es.web.img2.acsta.net/pictures/22/10/03/15/27/0389048.jpg",
         "trailer": "https://www.youtube.com/watch?v=JK-wAfAvJ0g&pp=ygUeYmxhY2sgcGFudGhlciB0cmFpbGVyIGVzcGHDsW9s",
         "sinopsis": "Tras el inesperado y trágico fallecimiento del rey T'Challa, la reina Ramonda, la princesa Shuri y las feroces guerreras Dora Milaje luchan por proteger a la nación de Wakanda de las potencias mundiales que buscan aprovecharse de su vulnerabilidad. Mientras intentan superar el duelo, los líderes del reino deberán forjar un nuevo camino frente a una amenaza desconocida que emerge de las profundidades del océano: Namor, el rey de la civilización submarina oculta de Talokan.",
-        "url_video": "https://filemoon.sx/d/ltfz85uyy3b3/Black_Panther_Wakanda_Forever_2022_1080p.mkv"
+        "url_video": "https://filemoon.sx/d/ltfz85uyy3b3/Black_Panther_Wakanda_Forever_2022_1080p.mkv",
+        "tipo": "pelicula",
+        "productora": "MARVEL"
     },
     {
         "titulo": "THE MATRIX",
@@ -107,7 +249,9 @@
         "caratula": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF7ZBvE4EI_Ag6A9Vo771jDGGcHUoODMMSkQ&s",
         "trailer": "https://youtu.be/Pl_H2Lmjn6k?si=oGYHCau0Cnl3d0Qw",
         "sinopsis": "Años después de la guerra que parecía haber salvado a la humanidad, Thomas Anderson (Neo) lleva una vida aparentemente normal, controlado por pastillas azules para sofocar extraños recuerdos que lo atormentan. Sin embargo, cuando la Matrix se actualiza para ser más fuerte y letal que nunca, un nuevo grupo de rebeldes le ofrece la pastilla roja. Neo deberá despertar una vez más, recuperar su conexión con Trinity y descubrir la inquietante verdad detrás de esta nueva realidad simulada.",
-        "url_video": "https://filemoon.sx/d/ejaqhhvqivlt"
+        "url_video": "https://filemoon.sx/d/ejaqhhvqivlt",
+        "tipo": "pelicula",
+        "productora": "warner bros"
     },
     {
         "titulo": "DEADPOOL",
@@ -118,7 +262,9 @@
         "caratula": "https://pics.filmaffinity.com/deadpool-260617331-large.jpg",
         "trailer": "https://youtu.be/9vN6DHB6bJc?si=Zl9n8sXqj3u9vH8e",
         "sinopsis": "Wade Wilson es un exoperativo de las Fuerzas Especiales convertido en un letal mercenario de alquiler. Tras ser diagnosticado con un cáncer terminal, se somete a un experimento clandestino y despiadado que le salva la vida, pero lo deja horriblemente desfigurado y le otorga habilidades de curación acelerada. Adoptando el alter ego de Deadpool, y armado con un retorcido sentido del humor y katanas letales, Wade emprende una violenta cacería para vengarse del hombre que arruinó su rostro.",
-        "url_video": "https://bysekoze.com/d/qc5gmivcefal"
+        "url_video": "https://bysekoze.com/d/qc5gmivcefal",
+        "tipo": "pelicula",
+        "productora": "MARVEL"
     },
     {
         "titulo": "THUNDERBOLTS",
@@ -129,7 +275,9 @@
         "caratula": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX7SlrHT7-l-hZpm09JnXfQmX0XToLr-_pOA&s",
         "trailer": "https://www.youtube.com/watch?v=w7ovxH7MGes&pp=ygUddGh1bmRlcmJvbHRzIHRyYWlsZXIgZXNwYcOxb2w%3D",
         "sinopsis": "En un mundo donde los héroes tradicionales escasean o están bajo sospecha, el gobierno reúne a un impredecible equipo de antihéroes, espías y antiguos villanos. Personajes inestables como Yelena Belova, Bucky Barnes y US Agent son forzados a trabajar juntos en misiones negras y altamente peligrosas. A medida que se enfrentan a amenazas letales y traiciones internas, este grupo disfuncional deberá descubrir si realmente pueden redimirse o si son solo marionetas prescindibles.",
-        "url_video": "https://filemoon.sx/d/y063fc948r8d"
+        "url_video": "https://filemoon.sx/d/y063fc948r8d",
+        "tipo": "pelicula",
+        "productora": "MARVEL"
     },
     {
         "titulo": "THE WONDER",
@@ -140,7 +288,9 @@
         "caratula": "https://pics.filmaffinity.com/the_wonder-264610106-large.jpg",
         "trailer": "https://youtu.be/htybz7XscIY",
         "sinopsis": "En la sombría y devota Irlanda de 1862, Lib Wright, una escéptica enfermera inglesa veterana de guerra, es contratada por un comité local para viajar a una pequeña y aislada aldea. Su misión: observar a Anna O'Donnell, una niña de 11 años que supuestamente lleva meses sobreviviendo milagrosamente sin comer. Mientras devotos y curiosos acuden a ver el 'milagro', Lib se obsesiona con descubrir el peligroso secreto científico y psicológico que esconde la familia antes de que sea demasiado tarde.",
-        "url_video": "https://filemoon.sx/d/kbtmna90pq5c"
+        "url_video": "https://filemoon.sx/d/kbtmna90pq5c",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
     },
     {
         "titulo": "THE MENU",
@@ -151,7 +301,9 @@
         "caratula": "https://es.web.img3.acsta.net/pictures/22/11/16/10/14/5146442.jpg",
         "trailer": "https://youtu.be/e0n8hdMh3-k?si=gxJN18PQ5TAso5Sn",
         "sinopsis": "Margot y Tyler, una joven pareja, viajan junto a otros clientes de élite a una isla remota en la costa del Pacífico para cenar en Hawthorne, un restaurante hiper-exclusivo dirigido por el célebre, obsesivo y enigmático chef Julian Slowik. A medida que avanza la velada, el fastuoso y teatral menú de degustación comienza a revelar sorpresas cada vez más perturbadoras. Los adinerados invitados pronto descubrirán que forman parte de un elaborado, grotesco y mortal plan de venganza culinaria.",
-        "url_video": "https://filemoon.sx/d/9nmm9778966t"
+        "url_video": "https://filemoon.sx/d/9nmm9778966t",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
     },
     {
         "titulo": "Oppenheimer",
@@ -162,6 +314,82 @@
         "caratula": "https://pics.filmaffinity.com/Oppenheimer-828933592-large.jpg",
         "trailer": "https://www.youtube.com/watch?v=JpUd4BS7yI0&pp=ygUTb3BwZW5oZWltZXIgdHJhaWxlcg%3D%3D",
         "sinopsis": "La historia de J. Robert Oppenheimer, el físico que lideró el proyecto que desarrolló la bomba atómica durante la Segunda Guerra Mundial.",
-        "url_video": "https://bysekoze.com/d/leqfeu4d6oa8"
+        "url_video": "https://bysekoze.com/d/leqfeu4d6oa8",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
+    },
+    {
+        "titulo": "Downfall",
+        "director": "Oliver Hirschbiegel",
+        "genero": "drama,estrenos",
+        "duracion": "2h 25m",
+        "actores": "Bruno Ganz, Alexandra Maria Lara, Ulrich Mühe",
+        "caratula": "velada.jpeg",
+        "trailer": "https://youtu.be/xBWmkwaTQ0k",
+        "sinopsis": "La historia de Adolf Hitler y su entorno durante los últimos días del Segundo Mundo.",
+        "url_video": "http://ok.ru/video/7557251533359",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
+    },
+    {
+        "titulo": "ANATOMÍA DE UN INSTANTE",
+        "director": "Paco Plaza",
+        "genero": "drama,histórico,estrenos,suspense",
+        "duracion": "2 Temporadas",
+        "actores": "Antonio Banderas, Elena Anaya, Jordi Mollá",
+        "caratula": "https://pics.filmaffinity.com/anatomia_de_un_instante-122205180-large.jpg",
+        "trailer": "https://www.youtube.com/watch?v=-yXCdUGem34",
+        "sinopsis": "Crónica detallada del 23 de febrero de 1981 en España, centrada en el instante en que Adolfo Suárez permanece sentado mientras las balas zumban en el Congreso.",
+        "tipo": "serie",
+        "productora": "20th century studios",
+        "temporadas": [
+            {
+                "numero": 1,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "El silencio de Suárez",
+                        "descripcion": "Un análisis del hombre que se negó a echarse al suelo bajo el fuego.",
+                        "miniatura": "ana_t1c1.jpg",
+                        "video_url": "video_ana1.mp4"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "La sombra de la traición",
+                        "descripcion": "Las reuniones secretas previas al asalto del Congreso.",
+                        "miniatura": "ana_t1c2.jpg",
+                        "video_url": "video_ana2.mp4"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Operación Duque de Ahumada",
+                        "descripcion": "El despliegue de las fuerzas de seguridad y el inicio del caos.",
+                        "miniatura": "ana_t1c3.jpg",
+                        "video_url": "video_ana3.mp4"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Gutiérrez Mellado",
+                        "descripcion": "El gesto de valor del general frente a los asaltantes.",
+                        "miniatura": "ana_t1c4.jpg",
+                        "video_url": "video_ana4.mp4"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "La noche de los transistores",
+                        "descripcion": "Cómo España entera vivió el secuestro a través de la radio.",
+                        "miniatura": "ana_t1c5.jpg",
+                        "video_url": "video_ana5.mp4"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "El mensaje del Rey",
+                        "descripcion": "La intervención televisada que cambió el rumbo de la historia.",
+                        "miniatura": "ana_t1c6.jpg",
+                        "video_url": "video_ana6.mp4"
+                    }
+                ]
+            }
+        ]
     }
 ]
