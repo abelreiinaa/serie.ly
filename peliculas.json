@@ -332,6 +332,19 @@
         "productora": "20th century studios"
     },
     {
+        "titulo": "los increíbles 2",
+        "director": "Brad Bird",
+        "genero": "animación,aventura,familia",
+        "duracion": "1h 50m",
+        "actores": "Craig T. Nelson, Sarah Vowell, Holly Hunter",
+        "caratula": "peliculaanimelobez.png",
+        "trailer": "https://youtu.be/92iqVqYGpxo?si=sOAxr-MU6xtY-ke5",
+        "sinopsis": "El equipo de superhéroes de los increíbles regresa para enfrentar nuevos desafíos y salvar el mundo.",
+        "url_video": "https://filemoon.sx/d/lizskrbm17z0/Los_increibles_2_1080.mkv",
+        "tipo": "pelicula",
+        "productora": "20th century studios"
+    },
+    {
         "titulo": "ANATOMÍA DE UN INSTANTE",
         "director": "Paco Plaza",
         "genero": "drama,histórico,estrenos,suspense",
@@ -350,43 +363,657 @@
                         "numero": 1,
                         "titulo": "El silencio de Suárez",
                         "descripcion": "Un análisis del hombre que se negó a echarse al suelo bajo el fuego.",
-                        "miniatura": "ana_t1c1.jpg",
-                        "video_url": "video_ana1.mp4"
+                        "caratula": "ana_t1c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x1/"
                     },
                     {
                         "numero": 2,
                         "titulo": "La sombra de la traición",
                         "descripcion": "Las reuniones secretas previas al asalto del Congreso.",
-                        "miniatura": "ana_t1c2.jpg",
-                        "video_url": "video_ana2.mp4"
+                        "caratula": "ana_t1c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x2/"
                     },
                     {
                         "numero": 3,
                         "titulo": "Operación Duque de Ahumada",
                         "descripcion": "El despliegue de las fuerzas de seguridad y el inicio del caos.",
-                        "miniatura": "ana_t1c3.jpg",
-                        "video_url": "video_ana3.mp4"
+                        "caratula": "ana_t1c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x3/"
                     },
                     {
                         "numero": 4,
                         "titulo": "Gutiérrez Mellado",
                         "descripcion": "El gesto de valor del general frente a los asaltantes.",
-                        "miniatura": "ana_t1c4.jpg",
-                        "video_url": "video_ana4.mp4"
+                        "caratula": "ana_t1c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x4/"
                     },
                     {
                         "numero": 5,
                         "titulo": "La noche de los transistores",
                         "descripcion": "Cómo España entera vivió el secuestro a través de la radio.",
-                        "miniatura": "ana_t1c5.jpg",
-                        "video_url": "video_ana5.mp4"
+                        "caratula": "ana_t1c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x5/"
                     },
                     {
                         "numero": 6,
                         "titulo": "El mensaje del Rey",
                         "descripcion": "La intervención televisada que cambió el rumbo de la historia.",
-                        "miniatura": "ana_t1c6.jpg",
-                        "video_url": "video_ana6.mp4"
+                        "caratula": "ana_t1c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x6/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "titulo": "Sons of Anarchy (Hijos de la anarquía)",
+        "director": "Kurt Sutter",
+        "genero": "acción,aventura,drama,estrenos,thriller",
+        "duracion": "7 Temporadas",
+        "actores": "Charlie Hunnam, Katey Sagal, Ron Perlman",
+        "caratula": "https://i.pinimg.com/736x/fe/b4/be/feb4be4170078a1bdc69f2c856202ec1.jpg",
+        "trailer": "https://www.youtube.com/watch?v=Yj2qQy9nXoE&pp=ygUOaGlqb3MgZGUgbGEgYW5hcXVl",
+        "sinopsis": "Sigue la vida de Jax Teller, un miembro de un club de motociclistas fuera de la ley, mientras lucha por equilibrar su lealtad al club con su deseo de proteger a su familia.",
+        "tipo": "serie",
+        "productora": "FX Networks",
+        "temporadas": [
+            {
+                "numero": 1,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Piloto",
+                        "descripcion": "Jax Teller comienza a cuestionar su lealtad al club de motociclistas tras descubrir un diario de su difunto padre.",
+                        "caratula": "soa_t1c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x1/"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Semillas",
+                        "descripcion": "El club enfrenta una amenaza de un grupo rival mientras Jax lidia con las consecuencias de sus acciones.",
+                        "caratula": "soa_t1c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x2/"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "La feria",
+                        "descripcion": "Una fiesta en el club se convierte en una trampa mortal cuando un grupo de pandilleros ataca.",
+                        "caratula": "soa_t1c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x3/"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "La absorción",
+                        "descripcion": "El club se une a otro grupo de motociclistas para enfrentar una amenaza común, pero las tensiones aumentan.",
+                        "caratula": "soa_t1c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x4/"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "La venganza",
+                        "descripcion": "Jax se ve obligado a tomar decisiones difíciles para proteger a su familia y al club.",
+                        "caratula": "soa_t1c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x5/"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "Armas mortales",
+                        "descripcion": "Un enfrentamiento violento con un grupo rival lleva a consecuencias devastadoras para el club.",
+                        "caratula": "soa_t1c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x6/"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Huesos del pasado",
+                        "descripcion": "Jax se enfrenta a sus raíces y descubre secretos que podrían poner en peligro a su familia.",
+                        "caratula": "soa_t1c7.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x7/"
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "Atracción",
+                        "descripcion": "Un nuevo miembro del club causa tensiones mientras Jax intenta mantener el control.",
+                        "caratula": "soa_t1c8.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x8/"
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "El infierno adelante",
+                        "descripcion": "El club se ve envuelto en un conflicto que pone a prueba su lealtad y valores.",
+                        "caratula": "soa_t1c9.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x9/"
+                    },
+                    {
+                        "numero": 10,
+                        "titulo": "El lado bueno",
+                        "descripcion": "Jax debe elegir entre su lealtad al club y su deber hacia su familia.",
+                        "caratula": "soa_t1c10.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x10/"
+                    },
+                    {
+                        "numero": 11,
+                        "titulo": "Carpincho",
+                        "descripcion": "Un incidente en el club lleva a una confrontación que pone en riesgo la seguridad de todos.",
+                        "caratula": "soa_t1c11.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x11/"
+                    },
+                    {
+                        "numero": 12,
+                        "titulo": "El sueño de los bebés",
+                        "descripcion": "Los secretos comienzan a salir a la luz, obligando a los miembros a tomar posiciones.",
+                        "caratula": "soa_t1c12.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x12/"
+                    },
+                    {
+                        "numero": 13,
+                        "titulo": "El revelador",
+                        "descripcion": "Un secreto que ha sido guardado por años se revela, cambiando todo lo que Jax creía saber.",
+                        "caratula": "soa_t1c13.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-1x13/"
+                    }
+                ]
+            },
+            {
+                "numero": 2,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Albificación",
+                        "caratula": "soa_t2c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x1/"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Pequeñas lágrimas",
+                        "caratula": "soa_t2c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x2/"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "El arreglo",
+                        "caratula": "soa_t2c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x3/"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Eureka",
+                        "caratula": "soa_t2c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x4/"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "Castigo",
+                        "caratula": "soa_t2c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x5/"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "El cerebro",
+                        "caratula": "soa_t2c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x6/"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Gilead",
+                        "caratula": "soa_t2c7.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x7/"
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "Potlatch",
+                        "caratula": "soa_t2c8.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x8/"
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "Fa Guan",
+                        "caratula": "soa_t2c9.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x9/"
+                    },
+                    {
+                        "numero": 10,
+                        "titulo": "Bálsamo",
+                        "caratula": "soa_t2c10.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x10/"
+                    },
+                    {
+                        "numero": 11,
+                        "titulo": "Servicio",
+                        "caratula": "soa_t2c11.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x11/"
+                    },
+                    {
+                        "numero": 12,
+                        "titulo": "La selección",
+                        "caratula": "soa_t2c12.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x12/"
+                    },
+                    {
+                        "numero": 13,
+                        "titulo": "Los problemas",
+                        "caratula": "soa_t2c13.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-2x13/"
+                    }
+                ]
+            },
+            {
+                "numero": 3,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Así",
+                        "caratula": "soa_t3c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x1/"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Engrasado",
+                        "caratula": "soa_t3c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x2/"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Cuidador",
+                        "caratula": "soa_t3c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x3/"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Hogar",
+                        "caratula": "soa_t3c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x4/   "
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "Girando y girando",
+                        "caratula": "soa_t3c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x5/"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "El empujón",
+                        "caratula": "soa_t3c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x6/"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Giro ensanchado",
+                        "caratula": "soa_t3c7.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x7/   "
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "Lochan Mor",
+                        "caratula": "soa_t3c8.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x8/   "
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "Turas",
+                        "caratula": "soa_t3c9.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x9/  "
+                    },
+                    {
+                        "numero": 10,
+                        "titulo": "Firinne",
+                        "caratula": "soa_t3c10.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x10/"
+                    },
+                    {
+                        "numero": 11,
+                        "titulo": "Bainne",
+                        "caratula": "soa_t3c11.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x11/"
+                    },
+                    {
+                        "numero": 12,
+                        "titulo": "Boda en junio",
+                        "caratula": "soa_t3c12.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x12/"
+                    },
+                    {
+                        "numero": 13,
+                        "titulo": "NS",
+                        "caratula": "soa_t3c13.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-3x13/"
+                    }
+                ]
+            },
+            {
+                "numero": 4,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Fuera",
+                        "caratula": "soa_t4c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x1/"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Impulsor",
+                        "caratula": "soa_t4c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x2/"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Dorylus",
+                        "caratula": "soa_t4c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x3/"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Una venta",
+                        "caratula": "soa_t4c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x4/"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "Ladrillo",
+                        "caratula": "soa_t4c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x5/"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "Con una X",
+                        "caratula": "soa_t4c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x6/"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Fruta para los cuervos",
+                        "caratula": "soa_t4c7.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x7/"
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "Receta familiar",
+                        "caratula": "soa_t4c8.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x8/"
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "Beso",
+                        "caratula": "soa_t4c9.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x9/"
+                    },
+                    {
+                        "numero": 10,
+                        "titulo": "Manos",
+                        "caratula": "soa_t4c10.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x10/"
+                    },
+                    {
+                        "numero": 11,
+                        "titulo": "El deber llama",
+                        "caratula": "soa_t4c11.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x11/"
+                    },
+                    {
+                        "numero": 12,
+                        "titulo": "Quemado y purgado",
+                        "caratula": "soa_t4c12.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x12/"
+                    },
+                    {
+                        "numero": 13,
+                        "titulo": "Ser, Acto 1",
+                        "caratula": "soa_t4c13.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x13/"
+                    },
+                    {
+                        "numero": 14,
+                        "titulo": "Ser, Acto 2",
+                        "caratula": "soa_t4c14.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-4x14/"
+                    }
+                ]
+            },
+            {
+                "numero": 5,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Soberano",
+                        "caratula": "soa_t5c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x1/"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Autoridad conferida",
+                        "caratula": "soa_t5c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x2/"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Tendido de tuberías",
+                        "caratula": "soa_t5c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x3/"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Huffy robada",
+                        "caratula": "soa_t5c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x4/"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "La orca se encogió de hombros",
+                        "caratula": "soa_t5c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x5/"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "Mundo pequeño",
+                        "caratula": "soa_t5c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x6/"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "El viaje salvaje de Toad",
+                        "caratula": "soa_t5c7.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x7/"
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "Ablación",
+                        "caratula": "soa_t5c8.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x8/"
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "Andare Pescare",
+                        "caratula": "soa_t5c9.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x9/"
+                    },
+                    {
+                        "numero": 10,
+                        "titulo": "Crucifixado",
+                        "caratula": "soa_t5c10.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x10/"
+                    },
+                    {
+                        "numero": 11,
+                        "titulo": "A ti mismo",
+                        "caratula": "soa_t5c11.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x11/"
+                    },
+                    {
+                        "numero": 12,
+                        "titulo": "Darthy",
+                        "caratula": "soa_t5c12.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x12/"
+                    },
+                    {
+                        "numero": 13,
+                        "titulo": "Lo tengo",
+                        "caratula": "soa_t5c13.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-5x13/"
+                    }
+                ]
+            },
+            {
+                "numero": 6,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "Paja",
+                        "caratula": "soa_t6c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x1/"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Uno uno seis",
+                        "caratula": "soa_t6c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x2/"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Poenitentia",
+                        "caratula": "soa_t6c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x3/"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Wolfsangel",
+                        "caratula": "soa_t6c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x4/"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "El rey loco",
+                        "caratula": "soa_t6c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x5/"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "Salvamento",
+                        "caratula": "soa_t6c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x6/"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Dulce y marchito",
+                        "caratula": "soa_t6c7.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x7/"
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "Los fantasmas",
+                        "caratula": "soa_t6c8.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x8/"
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "Juan 8:32",
+                        "caratula": "soa_t6c9.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x9/"
+                    },
+                    {
+                        "numero": 10,
+                        "titulo": "Huang Wu",
+                        "caratula": "soa_t6c10.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x10/"
+                    },
+                    {
+                        "numero": 11,
+                        "titulo": "Aon Rubhat",
+                        "caratula": "soa_t6c11.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x11/"
+                    },
+                    {
+                        "numero": 12,
+                        "titulo": "Eres mi sol",
+                        "caratula": "soa_t6c12.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x12/"
+                    },
+                    {
+                        "numero": 13,
+                        "titulo": "El trabajo de una madre",
+                        "caratula": "soa_t6c13.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-6x13/"
+                    }
+                ]
+            },
+            {
+                "numero": 7,
+                "capitulos": [
+                    {
+                        "numero": 1,
+                        "titulo": "El viudo negro",
+                        "caratula": "soa_t7c1.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x1/"
+                    },
+                    {
+                        "numero": 2,
+                        "titulo": "Trabajo y labranza",
+                        "caratula": "soa_t7c2.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x2/"
+                    },
+                    {
+                        "numero": 3,
+                        "titulo": "Jugando con monstruos",
+                        "caratula": "soa_t7c3.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x3/"
+                    },
+                    {
+                        "numero": 4,
+                        "titulo": "Pobres corderitos",
+                        "caratula": "soa_t7c4.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x4/"
+                    },
+                    {
+                        "numero": 5,
+                        "titulo": "Una extraña erupción",
+                        "caratula": "soa_t7c5.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x5/"
+                    },
+                    {
+                        "numero": 6,
+                        "titulo": "Fúmatelos si los tienes",
+                        "caratula": "soa_t7c6.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x6/"
+                    },
+                    {
+                        "numero": 7,
+                        "titulo": "Greensleeves",
+                        "caratula": "soa_t7c7.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x7/"
+                    },
+                    {
+                        "numero": 8,
+                        "titulo": "La separación de los cuervos",
+                        "caratula": "soa_t7c8.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x8/"
+                    },
+                    {
+                        "numero": 9,
+                        "titulo": "Qué obra de arte es el hombre",
+                        "caratula": "soa_t7c9.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x9/"
+                    },
+                    {
+                        "numero": 10,
+                        "titulo": "Fe y abatimiento",
+                        "caratula": "soa_t7c10.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x10/"
+                    },
+                    {
+                        "numero": 11,
+                        "titulo": "Trajes de aflicción",
+                        "caratula": "soa_t7c11.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x11/"
+                    },
+                    {
+                        "numero": 12,
+                        "titulo": "Rosa roja",
+                        "caratula": "soa_t7c12.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x12/"
+                    },
+                    {
+                        "numero": 13,
+                        "titulo": "Los bienes de papá",
+                        "caratula": "soa_t7c13.jpg",
+                        "video_url": "https://seriesflixhd.shop/episodio/sons-of-anarchy-7x13/"
                     }
                 ]
             }
